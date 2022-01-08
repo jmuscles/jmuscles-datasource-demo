@@ -1,0 +1,1 @@
+encrypt ivGeneratorClassName=org.jasypt.iv.RandomIvGenerator input="password" password=My-Secret algorithm=PBEWITHHMACSHA512ANDAES_256

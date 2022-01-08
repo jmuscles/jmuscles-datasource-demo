@@ -1,0 +1,60 @@
+jmuscles:
+   db-properties:
+     dataSources:
+       sqliteHikariDS:
+         type: hikari
+         connectionPropsKey: sqlite-db1
+         connectionPoolProperties:
+           poolName: 
+           minimumIdle: 1
+           maximumPoolSize: 5 
+           maxLifetime: 0
+           connectionTimeout: 180000      
+       mysqlHikariDS:
+         type: hikari
+         connectionPropsKey: mysql-db1
+         connectionPoolProperties:
+           poolName: 
+           minimumIdle: 1
+           maximumPoolSize: 5 
+           maxLifetime: 0
+           connectionTimeout: 180000  
+       mysqlTomcatDS:
+         type: tomcat
+         connectionPropsKey: mysql-db2
+         connectionPoolProperties:
+           initialSize: 1
+           maxActive: 10
+           maxIdle: 10
+           minIdle: 1
+           timeBetweenEvictionRunsMillis: 34000
+           minEvictableIdleTimeMillis: 55000
+           validationQuery: SELECT 1 FROM DUAL
+           validationInterval: 34000
+           testOnBorrow: true
+           removeAbandoned: true
+           removeAbandonedTimeout: 55
+       mysqlHikariDS2:
+         type: hikari
+         connectionPropsKey: mysql-db1
+         connectionPoolProperties:
+           poolName: 
+           minimumIdle: 1
+           maximumPoolSize: 5 
+           maxLifetime: 0
+           connectionTimeout: 180000                   
+       mysqlTomcatDS2:
+         type: tomcat
+         connectionPropsKey: mysql-db2
+         connectionPoolProperties:
+           initialSize: 1
+           maxActive: 10
+           maxIdle: 10
+           minIdle: 1
+           timeBetweenEvictionRunsMillis: 34000
+           minEvictableIdleTimeMillis: 55000
+           validationQuery: SELECT 1 FROM DUAL
+           validationInterval: 34000
+           testOnBorrow: true
+           removeAbandoned: true
+           removeAbandonedTimeout: 55	                         

@@ -1,0 +1,24 @@
+jmuscles:
+   db-properties:
+     connections:
+       sqlite-db1:
+         driverClassName: org.sqlite.JDBC
+         jdbcUrl: jdbc:sqlite::resource:db.sqlite
+         #username: root
+         #password: password
+         #jasypt-password: 
+         #jasypt-algorithm:
+       mysql-db1:
+         driverClassName: com.mysql.cj.jdbc.Driver
+         jdbcUrl: jdbc:mysql://localhost:3306/test1
+         username: root
+         password: password
+         #jasypt-password:  
+         #jasypt-algorithm:
+       mysql-db2:
+         driverClassName: com.mysql.cj.jdbc.Driver
+         jdbcUrl: jdbc:mysql://localhost:3306/test2
+         username: root
+         password: ENC(+VfN4GMBwu4bPd3nNGf6yGvAl1EzCzr7/S9yAR3Sf8U=)
+         jasypt-password: my-secret              
+         jasypt-algorithm: PBEWithMD5AndDES

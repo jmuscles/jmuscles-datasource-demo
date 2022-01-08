@@ -1,0 +1,12 @@
+Http Post:
+URL : http://localhost:8080/write/user2
+{
+    "first_name": "Manish2",
+    "email": "m2@m2.com",
+    "user_id": "manish123",
+    "gender": "Male",
+    "last_name": "goel2"
+}
+
+Http Get:
+URL : http://localhost:8080/get/user2

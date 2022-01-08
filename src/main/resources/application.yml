@@ -1,0 +1,63 @@
+logging:
+   level:
+      Root: INFO
+      org.springframework.web.filter.CommonsRequestLoggingFilter: INFO
+      com.zaxxer.hikari.HikariConfig: INFO
+      com.zaxxer.hikari.pool.HikariPool: DEBUG
+      org.apache.tomcat.jdbc.pool.*: DEBUG
+spring:
+   application:
+      name: datasource-spring-boot-starter-demo 
+   profiles:
+      include: dbconnections, datasources
+   datasource:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      #url: jdbc:sqlite::resource:rkpgeo.db
+      url: jdbc:mysql://localhost:3306/test1
+      username: root
+      password: password
+      hikari: 
+         pool-name: defaultDBConnectionPool
+         minimum-idle: 5
+         max-lifetime: 0
+         maximum-pool-size: 12
+   jpa:
+      show-sql: true
+      hibernate:
+         ddl-auto: none 
+         format_sql: true
+   sql: 
+      init.mode: always
+         
+management:
+   server:
+      port: 8080
+      ssl:
+         enabled: false
+   endpoints:
+      web:
+         base-path: /actuator
+         exposure:
+            include: "*"
+   
+executors-config:
+   sqlQueries_Write:
+      user1:
+         dskey: sqliteHikariDS
+         query: insert into user(user_id, first_name, last_name, email, gender) values(:user_id, :first_name, :last_name, :email, :gender)
+      user2:
+         dskey: mysqlHikariDS
+         query: insert into user(user_id, first_name, last_name, email, gender) values(:user_id, :first_name, :last_name, :email, :gender)
+      user3:
+         dskey: mysqlTomcatDS
+         query: insert into user(user_id, first_name, last_name, email, gender) values(:user_id, :first_name, :last_name, :email, :gender)
+   sqlQueries_Read:
+      user1:
+         dskey: sqliteHikariDS
+         query: select * from user
+      user2:
+         dskey: mysqlHikariDS
+         query: select * from user
+      user3:
+         dskey: mysqlTomcatDS
+         query: select * from user         
